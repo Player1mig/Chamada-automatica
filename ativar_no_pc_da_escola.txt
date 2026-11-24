@@ -1,0 +1,281 @@
+=====================================================
+ ATIVAR O PROJETO NO PC DA ESCOLA E APLICAR MUDANCAS
+ (projeto: chamada_automatica / repositorio no GitHub)
+=====================================================
+
+Troque SEU_USUARIO e NOME_DO_REPOSITORIO pelos seus dados reais.
+Exemplo de endereco:
+https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+
+
+-----------------------------------------------------
+ ANTES DE TUDO: O QUE PRECISA TER NO PC DA ESCOLA
+-----------------------------------------------------
+
+1) Python instalado.
+   Teste no terminal:   python --version
+   (se nao tiver: python.org/downloads, marcando "Add Python to PATH")
+
+2) Git instalado.
+   Teste no terminal:   git --version
+   (se nao tiver: git-scm.com)
+
+3) Webcam funcionando e um navegador (Opera GX, Chrome, Edge...).
+
+4) Internet (para clonar o repositorio e instalar as bibliotecas).
+
+Se faltar Python ou Git e o computador nao deixar instalar,
+peca ao professor ou ao responsavel pela informatica.
+
+
+=====================================================
+ PARTE 1: PRIMEIRA VEZ (instalar tudo)
+=====================================================
+
+1) Abra o terminal na pasta onde quer guardar o projeto
+   (por exemplo, Documentos). Pelo VS Code:
+   File > Open Folder > Documentos, depois Terminal > New Terminal.
+
+2) Baixe o projeto do GitHub:
+
+   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+
+   O GitHub vai pedir o login na primeira vez (o repositorio e
+   privado). Entre na sua conta e clique em Authorize.
+
+3) Entre na pasta do projeto:
+
+   cd NOME_DO_REPOSITORIO
+
+4) Crie o ambiente virtual:
+
+   python -m venv venv
+
+5) Ative o ambiente virtual:
+
+   venv\Scripts\activate
+
+   Deve aparecer (venv) no comeco da linha do terminal.
+
+   Se der erro dizendo que scripts estao desabilitados, rode:
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+   e tente ativar de novo.
+
+6) Instale as bibliotecas:
+
+   pip install -r requirements.txt
+
+7) Crie o banco de dados vazio:
+
+   python banco.py
+
+   Deve aparecer: Banco criado!
+
+8) Ligue o servidor:
+
+   python app.py
+
+   O terminal fica "preso" rodando: isso e normal.
+
+9) Abra no navegador:
+
+   http://127.0.0.1:5000
+
+   Use SEMPRE esse endereco. Nao abra o arquivo html direto.
+
+10) Faca o login e use o sistema.
+    Login de teste: admin@email.com  /  senha: 1234
+
+11) Para desligar o servidor: clique no terminal e aperte Ctrl+C.
+
+IMPORTANTE: o banco e as fotos NAO vem do GitHub (de proposito, sao
+dados de alunos). Na escola, todo mundo precisa ser registrado de novo.
+Registre com o nome e a sala no final. Exemplo: Ana Souza 3° B
+
+
+=====================================================
+ PARTE 2: TODA VEZ QUE FOR USAR (depois da primeira vez)
+=====================================================
+
+1) Abra o VS Code na pasta do projeto: File > Open Folder.
+   Depois: Terminal > New Terminal.
+
+2) Ative o ambiente virtual:
+
+   venv\Scripts\activate
+
+3) Ligue o servidor:
+
+   python app.py
+
+4) Abra http://127.0.0.1:5000 no navegador.
+
+5) Ao terminar, desligue com Ctrl+C.
+
+
+=====================================================
+ PARTE 3: APLICAR MUDANCAS FEITAS EM CASA
+=====================================================
+
+EM CASA (depois de mexer no codigo):
+
+   git add .
+   git commit -m "descreva o que mudou"
+   git push
+
+NA ESCOLA (para trazer as mudancas):
+
+1) Desligue o servidor se estiver ligado (Ctrl+C).
+
+2) Entre na pasta do projeto e baixe as mudancas:
+
+   git pull
+
+3) Ative o ambiente virtual:
+
+   venv\Scripts\activate
+
+4) Se a mudanca incluiu uma biblioteca nova (o requirements.txt
+   mudou), atualize as bibliotecas:
+
+   pip install -r requirements.txt
+
+   Na duvida, pode rodar esse comando sempre. Se nada mudou, ele
+   so confirma que esta tudo instalado.
+
+5) Ligue o servidor de novo:
+
+   python app.py
+
+6) No navegador, aperte Ctrl+F5 para limpar o cache e carregar os
+   arquivos novos.
+
+Regra de ouro: sempre reinicie o servidor (Ctrl+C e python app.py)
+depois de mudar o app.py ou qualquer arquivo .py.
+Mudancas so em html, css ou js pedem apenas Ctrl+F5.
+
+
+=====================================================
+ PARTE 4: MUDANCAS FEITAS NA ESCOLA (levar para casa)
+=====================================================
+
+NA ESCOLA:
+
+   git add .
+   git commit -m "descreva o que mudou"
+   git push
+
+EM CASA:
+
+   git pull
+
+Se o commit pedir seu nome e email (primeira vez no PC da escola):
+
+   git config user.name "Seu Nome"
+   git config user.email "seuemail@exemplo.com"
+
+(sem --global, para valer so nesta pasta e nao mexer na configuracao
+do computador da escola)
+
+Para evitar conflitos: antes de comecar a mexer em qualquer lugar,
+rode git pull. Assim voce sempre parte da versao mais nova.
+
+
+=====================================================
+ PARTE 5: LIMPAR OS DADOS (quando precisar)
+=====================================================
+
+Apagar tudo (pessoas, presencas e fotos) e comecar do zero:
+
+   python reiniciar_banco.py
+
+Digite SIM quando perguntar. Desligue o servidor antes (Ctrl+C).
+
+Apagar so as presencas (de hoje, de todos os dias ou de uma pessoa):
+
+   python apagar_presencas.py
+
+(esse arquivo so existe se voce o criou e enviou ao GitHub)
+
+
+=====================================================
+ PARTE 6: AO TERMINAR NO PC DA ESCOLA (privacidade)
+=====================================================
+
+O sistema guarda fotos e dados de rosto dos alunos. Ao terminar:
+
+1) Desligue o servidor (Ctrl+C).
+
+2) Se nao for mais precisar dos dados nesse computador, rode:
+
+   python reiniciar_banco.py
+
+3) Saia da sua conta do GitHub no navegador.
+
+4) Se o computador for de uso coletivo, remova a credencial salva:
+   abra o "Gerenciador de Credenciais" do Windows, va em
+   "Credenciais do Windows", procure git:https://github.com e
+   clique em Remover.
+
+5) Nunca envie as pastas fotos/ nem o arquivo dados.db para o GitHub.
+   Eles ja estao no .gitignore: nao mexa nesse arquivo.
+
+
+=====================================================
+ PROBLEMAS COMUNS
+=====================================================
+
+* "git" ou "python" nao e reconhecido
+  O programa nao esta instalado, ou o terminal foi aberto antes da
+  instalacao. Feche e abra o VS Code de novo.
+
+* "No module named flask" ou "No module named cv2"
+  O (venv) nao esta ativo. Rode: venv\Scripts\activate
+  Se ainda der erro: pip install -r requirements.txt
+
+* "no such table: pessoas"
+  O banco nao foi criado. Rode: python banco.py
+  (dentro da pasta do projeto)
+
+* Erro com arquivo .onnx
+  Confira se a pasta modelos tem os dois arquivos:
+  face_detection_yunet_2023mar.onnx
+  face_recognition_sface_2021dec.onnx
+  Se nao estiverem no GitHub, copie do seu computador pelo pendrive.
+
+* Pagina com erro 404 ou "Not Found" depois de uma mudanca
+  O servidor esta com a versao antiga. Ctrl+C e python app.py de novo.
+
+* Pagina nao mudou depois do git pull
+  Aperte Ctrl+F5 no navegador.
+
+* A camera nao pede permissao
+  Confira se o endereco comeca com http://127.0.0.1:5000
+  e libere a camera no navegador (icone ao lado do endereco).
+
+* git pull reclama de arquivos alterados
+  Voce mexeu em um arquivo na escola sem enviar. Faca antes:
+  git add .
+  git commit -m "mudancas na escola"
+  git pull
+  Se aparecer conflito, avise que eu ajudo a resolver.
+
+* git push pede senha e da erro
+  O GitHub nao aceita a senha da conta. Use um token:
+  GitHub > foto do perfil > Settings > Developer settings >
+  Personal access tokens > Tokens (classic) > Generate new token,
+  com a permissao "repo". Use o token no lugar da senha.
+
+* O reconhecimento erra muito na escola (luz diferente)
+  Registre as pessoas de novo na escola, de frente e com boa luz.
+  Se precisar, ajuste o LIMITE no arquivo reconhecimento.py
+  (menor = aceita mais; maior = mais rigoroso).
+
+
+=====================================================
+ DICA FINAL
+=====================================================
+
+Teste todo esse processo em um dia que NAO seja o da apresentacao.
+Assim, se faltar Python, Git, permissao ou internet, ainda da tempo
+de resolver.
