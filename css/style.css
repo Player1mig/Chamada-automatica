@@ -1,0 +1,31 @@
+.login-box {
+    width: min(380px, calc(100% - 32px));
+    margin: 14vh auto 0;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(10px);
+}
+
+.login-box h2 {
+    margin: 0 0 4px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.login-box button {
+    margin-top: 6px;
+}
+
+#erro {
+    min-height: 20px;
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--erro);
+}
