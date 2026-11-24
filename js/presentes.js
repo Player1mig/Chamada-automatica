@@ -78,6 +78,9 @@ function desenhar() {
   });
 
   Object.keys(grupos).sort(compararSalas).forEach((sala) => {
+    // nomes em ordem alfabética dentro de cada sala
+    grupos[sala].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
+
     const titulo = document.createElement("h2");
     titulo.className = "titulo-sala";
     titulo.textContent = `${sala} (${grupos[sala].length})`;
