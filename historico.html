@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="css/historico.css">
+</head>
+<body>
+
+    <main class="pagina">
+        <h1>Histórico de presenças</h1>
+
+        <div class="filtros">
+            <input type="text" id="busca-nome" placeholder="Pesquisar por nome ou série (ex.: ana 3b)" autocomplete="off">
+
+            <select id="filtro-sala">
+                <option value="todas">Todas as séries</option>
+            </select>
+
+            <select id="filtro-periodo">
+                <option value="todos">Todo o período</option>
+                <option value="hoje">Hoje</option>
+                <option value="7">Últimos 7 dias</option>
+                <option value="30">Últimos 30 dias</option>
+            </select>
+
+            <input type="date" id="filtro-data" title="Data específica (opcional)">
+
+            <button id="limpar" type="button">Limpar filtros</button>
+        </div>
+
+        <p id="contador"></p>
+        <p id="vazio" class="oculto">Nenhum registro encontrado.</p>
+        <div id="lista"></div>
+
+        <a href="/inicial.html" class="voltar">Voltar</a>
+    </main>
+
+    <script src="js/historico.js"></script>
+</body>
+</html>

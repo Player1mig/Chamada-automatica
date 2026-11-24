@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(38, 0, 46), rgb(90, 11, 97), rgb(38, 0, 46));
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.pagina {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+    
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Filtro de sala ---------- */
+.filtro {
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: rgb(63, 4, 75);
+    color: white;
+
+}
+
+/* ---------- Título de cada sala ---------- */
+.titulo-sala {
+    margin: 25px 0 10px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: 2px solid rgb(63, 4, 75);
+}
+
+/* ---------- Cartão de cada pessoa ---------- */
+.cartao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.cartao img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgb(63, 4, 75);
+}
+
+.cartao .id {
+    min-width: 40px;
+    color: #f0c4ff;
+    font-weight: bold;
+}
+
+.cartao .nome {
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cartao .hora {
+    opacity: 0.8;
+}
+
+/* ---------- Botão voltar ---------- */
+.voltar {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: rgb(63, 4, 75);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background-color: rgb(20, 0, 22);
+    transform: scale(1.05);
+}
+
+.oculto {
+    display: none !important;
+}

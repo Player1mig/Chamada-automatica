@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(38, 0, 46), rgb(90, 11, 97), rgb(38, 0, 46));
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.pagina {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filtros input,
+.filtros select,
+.filtros button {
+    box-sizing: border-box;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#busca-nome {
+    grid-column: 1 / -1;   /* campo de nome ocupa a linha toda */
+}
+
+.filtros button {
+    background-color: rgb(63, 4, 75);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background-color: rgb(20, 0, 22);
+}
+
+#contador {
+    margin: 0 0 10px;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* ---------- Título de cada dia ---------- */
+.titulo-data {
+    margin: 25px 0 10px;
+    padding-bottom: 6px;
+    font-size: 18px;
+    text-align: left;
+    border-bottom: 2px solid rgb(63, 4, 75);
+}
+
+/* ---------- Cartão de cada registro ---------- */
+.cartao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.cartao img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgb(63, 4, 75);
+}
+
+.cartao .id {
+    min-width: 35px;
+    color: #f0c4ff;
+    font-weight: bold;
+}
+
+.cartao .nome {
+    flex: 1;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.cartao .sala {
+    padding: 3px 8px;
+    background: rgb(63, 4, 75);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.cartao .hora {
+    opacity: 0.8;
+}
+
+/* ---------- Botão voltar ---------- */
+.voltar {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: rgb(63, 4, 75);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background-color: rgb(20, 0, 22);
+    transform: scale(1.05);
+}
+
+.oculto {
+    display: none !important;
+}

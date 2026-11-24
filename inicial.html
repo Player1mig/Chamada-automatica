@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamada Automática</title>
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+    <div class="principal">
+        <div></div> <!-- coluna vazia da esquerda: mantém a câmera no centro -->
+
+        <div class="camera-div">
+            <div class="camera-box">
+                <video id="camera" autoplay playsinline muted></video>
+            </div>
+            <p id="mensagem"></p>
+        </div>
+
+        <aside class="painel">
+            <h2>Reconhecido</h2>
+            <img id="foto-reconhecido" class="oculto" alt="Foto da pessoa reconhecida">
+            <p id="nome-reconhecido" class="nome">Aguardando...</p>
+            <p id="id-reconhecido" class="id"></p>
+            <p id="status-reconhecido" class="status"></p>
+        </aside>
+    </div>
+
+    <div class="campo-nome">
+        <input type="text" id="nome" placeholder="Nome e sala.">
+    </div>
+
+    <div class="botoes">
+        <button id="reconhecimento">Reconhecimento</button>
+        <button id="registrar">Registrar</button>
+        <button id="presentes">Presentes</button>
+        <button id="historico">Historico</button>
+    </div>
+
+    <script src="js/inicio.js"></script>
+</body>
+</html>
